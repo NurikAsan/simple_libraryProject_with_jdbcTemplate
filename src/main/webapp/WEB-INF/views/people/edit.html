@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Person</title>
+  <style>
+    .btn{
+      border-radius: 100px;
+      border-style: solid;
+      border-color: aliceblue;
+    }
+  </style>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/people/{id} (id=${person.getId()})}" th:object="${person}">
+  Enter surname: <input type="text" th:field="*{surName}"/>
+    <p style="color: red" th:if="${#fields.hasErrors('surName')}" th:errors="*{surName}" />
+  <br>
+  Enter year: <input type="text" th:field="*{year}"/>
+    <p style="color: red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}" />
+  <br>
+  <input type="submit" value="Update" class="btn">
+</form>
+
+</body>
+</html>

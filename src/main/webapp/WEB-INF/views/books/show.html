@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Book</title>
+</head>
+<body>
+All Books:
+<br>
+<ul th:each="b : ${books}">
+    <li>
+        <a th:href="@{/books/{id} (id=${b.getId()})}" th:text="${b.getName() + ','
+         + b.getAuthor() + ' ' + b.getYear_of_product()}"/>
+    </li>
+</ul>
+<hr>
+<a th:href="@{/books/new}">Add book</a>
+
+<a th:href="@{/}">main page</a>
+</body>
+</html>

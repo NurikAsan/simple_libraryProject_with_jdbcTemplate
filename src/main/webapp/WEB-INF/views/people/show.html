@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+    <style>
+       a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+All People:
+<br>
+<ul th:each="p : ${people}">
+    <li>
+        <a th:href="@{/people/{id} (id=${p.getId()})}" th:text="${p.getSurName() + ','
+         + p.getYear()}"/>
+    </li>
+</ul>
+<hr>
+<a th:href="@{/people/new}">Add Person</a>
+
+<a th:href="@{/}">main page</a>
+</body>
+</html>
