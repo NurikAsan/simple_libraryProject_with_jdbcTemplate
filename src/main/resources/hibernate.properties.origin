@@ -1,0 +1,7 @@
+hibernate.dialect = your dialect
+hibernate.driver_class = your driver
+hibernate.connection.url = your url
+hibernate.connection.username = your username
+hibernate.connection.password = your password
+hibernate.current_session_context_class = thread
+hibernate.show_sql=true

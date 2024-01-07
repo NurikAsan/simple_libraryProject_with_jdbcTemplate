@@ -21,9 +21,11 @@
 
 <div th:if="${!books.isEmpty()}">
 <b>Books:</b>
-    <ul th:each="b : ${books}">
-        <li th:text="${b.getName() + ',' + b.getAuthor() + ' ' + b.getYear_of_product()}"></li>
-    </ul>
+    <div th:each="b : ${books}">
+        <span th:text="${b.getName() + ',' + b.getAuthor() + ' ' + b.getYear()}"
+            th:style="${b.isExpired()} ? 'color: red' : 'color: black'">
+        </span>
+    </div>
 </div>
 
 <form th:method="GET" th:action="@{/people/edit/{id} (id=${person.getId()})}">
@@ -33,5 +35,6 @@
 <form th:method="DELETE" th:action="@{/people/{id} (id=${person.getId()})}">
     <input type="submit" value="Delete" class="btn">
 </form>
+
 </body>
 </html>

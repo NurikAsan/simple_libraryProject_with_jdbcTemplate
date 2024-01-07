@@ -1,7 +1,7 @@
 package com.nurikov.spring.util;
 
-import com.nurikov.spring.DAO.PersonDAO;
 import com.nurikov.spring.Entity.Person;
+import com.nurikov.spring.services.PeopleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -10,10 +10,10 @@ import org.springframework.validation.Validator;
 @Component
 public class PersonValidator implements Validator {
 
-    private final PersonDAO personDAO;
+    private final PeopleService personDAO;
 
     @Autowired
-    public PersonValidator(PersonDAO personDAO) {
+    public PersonValidator(PeopleService personDAO) {
         this.personDAO = personDAO;
     }
 

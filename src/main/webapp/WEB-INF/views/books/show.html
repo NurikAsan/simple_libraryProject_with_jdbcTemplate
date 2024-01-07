@@ -10,12 +10,16 @@ All Books:
 <ul th:each="b : ${books}">
     <li>
         <a th:href="@{/books/{id} (id=${b.getId()})}" th:text="${b.getName() + ','
-         + b.getAuthor() + ' ' + b.getYear_of_product()}"/>
+         + b.getAuthor() + ' ' + b.getYear()}"/>
     </li>
 </ul>
 <hr>
 <a th:href="@{/books/new}">Add book</a>
-
+<br>
 <a th:href="@{/}">main page</a>
+<br><br>
+<a th:href="@{/books?sort_by_year=true}"/>Sort book by year
+<br><br>
+<a th:href="@{/books/search}"/>Search books
 </body>
 </html>
